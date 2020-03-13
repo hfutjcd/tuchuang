@@ -9,7 +9,7 @@ parse = argparse.ArgumentParser()
 parse.add_argument("imglist", nargs='+', help="image list")
 args = parse.parse_args()
 
-
+os.chdir(os.path.dirname(os.path.abspath(__file__)))
 logger = logging.getLogger(__name__)
 logger.setLevel(level=logging.INFO)
 handler = logging.FileHandler("log.txt")
@@ -26,7 +26,6 @@ logger.addHandler(console)
 
 def main():
     logger.info(__file__)
-    os.chdir(os.path.dirname(os.path.abspath(__file__)))
     imglist = args.imglist
     # logger.info(imglist)
     repo = Repo()
