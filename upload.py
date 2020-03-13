@@ -31,6 +31,8 @@ def main():
     # logger.info(imglist)
     repo = Repo()
     git = repo.git
+    giturl = 'https: // github.com/hfutjcd/tuchuang/blob/master/commonimge/12.jpg?raw = true'
+    result=[]
     git.add(__file__)
     # logger.info(git.status())
     for img in imglist:
@@ -45,10 +47,14 @@ def main():
         newpath=os.path.join(foldname,imgname)
         shutil.copy(imgPath,newpath)
         git.add(newpath)
+        result.append(giturl+"{}/{}?raw=true".format(foldname,imgname))
         logger.info(imgname)
         logger.info(os.path.basename(os.path.dirname(imgPath)))
+
     git.commit('-m',"add img to {}".format(foldname))
     remote = repo.remote() 
-    remote.push()
+    remote.push()  # Authentication failed for
+    for url in result:
+        print(url)
 if __name__ == "__main__":
     main()
