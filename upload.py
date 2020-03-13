@@ -30,7 +30,7 @@ def main():
     # logger.info(imglist)
     repo = Repo()
     git = repo.git 
-    giturl = 'https: // github.com/hfutjcd/tuchuang/blob/master/'
+    giturl = 'https://github.com/hfutjcd/tuchuang/blob/master/'
     result=[]
     git.add(__file__)
     # logger.info(git.status())
