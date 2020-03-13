@@ -51,7 +51,7 @@ def main():
         logger.info(imgname)
         logger.info(os.path.basename(os.path.dirname(imgPath)))
     git.commit('-m',"add img to {}".format(foldname))
-    remote = repo.remote('gitee') 
+    remote = repo.remote('origin') 
     remote.push()  # Authentication failed for
     # logger.info(result)
     for url in result:
