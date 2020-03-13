@@ -53,7 +53,7 @@ def main():
     git.commit('-m',"add img to {}".format(foldname))
     remote = repo.remote('gitee') 
     remote.push()  # Authentication failed for
-    logger.info(result)
+    # logger.info(result)
     for url in result:
         print(url)
 if __name__ == "__main__":
