@@ -29,7 +29,7 @@ def main():
     imglist = args.imglist
     # logger.info(imglist)
     repo = Repo()
-    git = repo.git
+    git = repo.git 
     giturl = 'https: // github.com/hfutjcd/tuchuang/blob/master/'
     result=[]
     git.add(__file__)
