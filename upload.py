@@ -4,6 +4,7 @@ import sys
 import argparse
 import logging
 import shutil
+repourl = 'https://github.com/hfutjcd/tuchuang'
 
 parse = argparse.ArgumentParser()
 parse.add_argument("imglist", nargs='+', help="image list")
@@ -30,7 +31,7 @@ def main():
     # logger.info(imglist)
     repo = Repo()
     git = repo.git 
-    giturl = 'https://github.com/hfutjcd/tuchuang/blob/master/'
+    giturl = repourl+'/blob/master/'
     result=[]
     git.add(__file__)
     # logger.info(git.status())
