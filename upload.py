@@ -49,6 +49,6 @@ def main():
         logger.info(os.path.basename(os.path.dirname(imgPath)))
     git.commit('-m',"add img to {}".format(foldname))
     remote = repo.remote()
-    remote.push()
+    remote.push('origin','master')
 if __name__ == "__main__":
     main()
