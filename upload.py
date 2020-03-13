@@ -51,9 +51,9 @@ def main():
         logger.info(imgname)
         logger.info(os.path.basename(os.path.dirname(imgPath)))
     git.commit('-m',"add img to {}".format(foldname))
-    # remote = repo.remote() 
-    # remote.push()  # Authentication failed for
-    # logger.info(result)
+    remote = repo.remote('gitee') 
+    remote.push()  # Authentication failed for
+    logger.info(result)
     for url in result:
         print(url)
 if __name__ == "__main__":
