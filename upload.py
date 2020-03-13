@@ -50,10 +50,10 @@ def main():
         result.append(giturl+"{}/{}?raw=true".format(foldname,imgname))
         logger.info(imgname)
         logger.info(os.path.basename(os.path.dirname(imgPath)))
-
     git.commit('-m',"add img to {}".format(foldname))
     remote = repo.remote() 
     remote.push()  # Authentication failed for
+    log.info(result)
     for url in result:
         print(url)
 if __name__ == "__main__":
