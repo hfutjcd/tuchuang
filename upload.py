@@ -28,16 +28,13 @@ logger.addHandler(console)
 def main():
     logger.info(__file__)
     imglist = args.imglist
-    # logger.info(imglist)
     repo = Repo()
     git = repo.git 
     giturl = repourl+'/blob/master/'
     result=[]
     git.add(__file__)
-    # logger.info(git.status())
     for img in imglist:
         imgPath = os.path.normpath(img)
-        # imgname = os.path.abspath(imgPath)
         imgname = os.path.basename(imgPath)
         foldname = os.path.basename(os.path.dirname(imgPath))
         if not foldname:
@@ -53,7 +50,6 @@ def main():
     git.commit('-m',"add img to {}".format(foldname))
     remote = repo.remote('origin') 
     remote.push()  # Authentication failed for
-    # logger.info(result)
     for url in result:
         print(url)
 if __name__ == "__main__":
