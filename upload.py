@@ -52,6 +52,6 @@ def main():
     remote = repo.remote('origin') 
     remote.push()  # Authentication failed for
     for url in result:
-        print(url.encode('GBK'))
+        print(url.encode('utf-8'))
 if __name__ == "__main__":
     main()
