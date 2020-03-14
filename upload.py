@@ -1,3 +1,4 @@
+#coding=utf-8
 import os
 from git import Repo
 import sys
@@ -51,6 +52,6 @@ def main():
     remote = repo.remote('origin') 
     remote.push()  # Authentication failed for
     for url in result:
-        print(url)
+        print(url.encode('GBK'))
 if __name__ == "__main__":
     main()
